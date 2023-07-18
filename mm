@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "packageManager": "pnpm@8.6.7",
+  "scripts": {
+    "build": "turbo run build:tailwind build --filter=./packages/\\*",
+    "build:all": "turbo run build:tailwind build",
+    "build:core": "pnpm build --filter=nextra",
+    "build:theme-blog": "pnpm build --filter=nextra-theme-blog",
+    "build:theme-docs": "pnpm build --filter=nextra-theme-docs",
+    "clean": "turbo run clean",
+    "dev:core": "turbo run dev --filter=nextra... --filter=!docs",
+    "dev:theme-blog": "turbo run dev --filter=example-blog... --filter=!docs",
+    "dev:theme-docs": "turbo run dev --filter=swr-site... --filter=!docs",
+    "dev:website": "turbo run dev --filter=docs...",
+    "lint": "eslint --cache --ignore-path .gitignore --max-warnings 0 .",
+    "lint:prettier": "prettier --cache --check --ignore-path .gitignore --ignore-path .prettierignore .",
+    "prettier": "pnpm lint:prettier --write",
+    "release": "changeset publish",
+    "test": "turbo run test",
+    "types:check": "turbo run types:check",
+    "version": "changeset version"
+  },
